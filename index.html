@@ -327,6 +327,36 @@
     footer { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
     .footer-right { text-align: center; }
   }
+
+  .hero-bg-placeholder {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  }
+  .service-placeholder {
+    background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .service-placeholder span {
+    font-family: "Bebas Neue", sans-serif; font-size: 1.1rem;
+    letter-spacing: 0.15em; color: rgba(212,168,67,0.4); text-transform: uppercase;
+  }
+  .about-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-placeholder span {
+    font-family: "Bebas Neue", sans-serif; font-size: 1.2rem;
+    letter-spacing: 0.2em; color: rgba(212,168,67,0.4); text-transform: uppercase;
+  }
+  .gallery-placeholder {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 240px;
+  }
+  .gallery-placeholder span {
+    font-family: "Bebas Neue", sans-serif; font-size: 1rem;
+    letter-spacing: 0.15em; color: rgba(212,168,67,0.35); text-transform: uppercase;
+  }
 </style>
 </head>
 <body>
@@ -348,10 +378,10 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg">
-    <div class="hero-bg-panel"><img src="tile_1.jpg" alt="" /></div>
-    <div class="hero-bg-panel"><img src="tile_2.jpg" alt="" /></div>
-    <div class="hero-bg-panel"><img src="tile_3.jpg" alt="" /></div>
-    <div class="hero-bg-panel"><img src="tile_4.jpg" alt="" /></div>
+    <div class="hero-bg-panel hero-bg-placeholder"></div>
+    <div class="hero-bg-panel hero-bg-placeholder"></div>
+    <div class="hero-bg-panel hero-bg-placeholder"></div>
+    <div class="hero-bg-panel hero-bg-placeholder"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -431,7 +461,7 @@
   </div>
   <div class="services-list">
     <div class="service-item">
-      <div class="service-img-wrap"><img src="tile_2.jpg" alt="Tile installation" /></div>
+      <div class="service-img-wrap service-placeholder"><span>Tile & Stone</span></div>
       <div class="service-body">
         <div class="service-num">01</div>
         <div class="service-title">Tile & Stone</div>
@@ -439,7 +469,7 @@
       </div>
     </div>
     <div class="service-item">
-      <div class="service-img-wrap"><img src="tile_3.jpg" alt="Custom shower tile" /></div>
+      <div class="service-img-wrap service-placeholder"><span>Custom Showers</span></div>
       <div class="service-body">
         <div class="service-num">02</div>
         <div class="service-title">Custom Showers</div>
@@ -447,7 +477,7 @@
       </div>
     </div>
     <div class="service-item">
-      <div class="service-img-wrap"><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&q=80" alt="Hardwood floor installation" /></div>
+      <div class="service-img-wrap service-placeholder"><span>Hardwood & Laminate</span></div>
       <div class="service-body">
         <div class="service-num">03</div>
         <div class="service-title">Hardwood & Laminate</div>
@@ -492,10 +522,10 @@
   <div class="eyebrow">Our work</div>
   <h2>Real jobs. Real results.</h2>
   <div class="gallery-grid">
-    <div class="g-item tall"><img src="tile_3.jpg" alt="Custom shower" /></div>
-    <div class="g-item"><img src="tile_1.jpg" alt="Marble tile floor" /></div>
-    <div class="g-item"><img src="tile_2.jpg" alt="Fireplace tile" /></div>
-    <div class="g-item wide"><img src="https://images.unsplash.com/photo-1597031751096-9acc728067ad?w=1200&q=80" alt="Carpet flooring" /></div>
+    <div class="g-item tall gallery-placeholder"><span>Custom Shower</span></div>
+    <div class="g-item gallery-placeholder"><span>Tile Floor</span></div>
+    <div class="g-item gallery-placeholder"><span>Fireplace Tile</span></div>
+    <div class="g-item wide gallery-placeholder"><span>Carpet Installation</span></div>
   </div>
 </div>
 

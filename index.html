@@ -3,369 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hibbard Floor & More | Hardwood, Tile & Carpet — Dayton to Cincinnati</title>
-<meta name="description" content="Family-owned flooring installers serving Dayton to Cincinnati. Hard surface, tile, and carpet installation done right. Free estimates — call (513) 377-5955.">
+<title>Hibbard Floor & More | Hardwood, Tile, LVP & Carpet — Dayton to Cincinnati</title>
+<meta name="description" content="Family-owned flooring installers serving Dayton to Cincinnati. Hardwood, tile, LVP, carpet and more. Free estimates — call (513) 377-5955.">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Mulish:wght@300;400;500;600;700&display=swap');
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
-    --black: #0D0D0D;
-    --charcoal: #1C1C1C;
-    --concrete: #2E2E2E;
-    --warm: #F5F0E8;
-    --gold: #D4A843;
-    --gold-dim: #8A6B25;
-    --rust: #B85C2A;
-    --muted: #888;
-    --border: rgba(255,255,255,0.07);
-  }
+:root {
+  --espresso: #221610;
+  --walnut:   #2c1d13;
+  --cocoa:    #38271a;
+  --bark:     #4a3422;
+  --honey:    #d99a4e;
+  --amber:    #ecb76b;
+  --ember:    #c06a35;
+  --cream:    #f4ead9;
+  --oat:      #e8d9c0;
+  --linen:    #faf4e9;
+  --taupe:    #b8a489;
+  --muted:    #9a866c;
+  --softborder: #45301f;
+}
 
-  html { scroll-behavior: smooth; }
-  body { background: var(--black); color: var(--warm); font-family: 'Inter', sans-serif; overflow-x: hidden; }
-  a { text-decoration: none; color: inherit; }
+html { scroll-behavior: smooth; }
+body { background: var(--espresso); color: var(--cream); font-family: 'Mulish', sans-serif; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 3rem;
-    background: rgba(13,13,13,0.92);
-    backdrop-filter: blur(16px);
-  }
-  .nav-logo img {
-    height: 160px; width: auto;
-  }
-  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-  .nav-links a {
-    font-size: 0.78rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: rgba(245,240,232,0.55);
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: transparent !important;
-    border: 1px solid var(--gold) !important;
-    color: var(--gold) !important;
-    padding: 0.5rem 1.4rem;
-    font-size: 0.75rem !important;
-    letter-spacing: 0.14em !important;
-    transition: background 0.2s, color 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  height: 86px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(34,22,16,0.96);
+  border-bottom: 1px solid var(--softborder);
+  backdrop-filter: blur(8px);
+}
+.nav-logo img { height: 70px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--taupe); transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-cta {
+  background: var(--honey) !important; color: var(--espresso) !important;
+  padding: 0.6rem 1.5rem; border-radius: 40px;
+  font-weight: 700 !important; transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--amber) !important; }
 
-  /* ── HERO ── */
-  .hero {
-    height: 100vh; min-height: 700px;
-    position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: flex-end;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 3px;
-  }
-  .hero-bg-panel { overflow: hidden; }
-  .hero-bg-panel img {
-    width: 100%; height: 100%; object-fit: cover;
-    filter: brightness(0.35) saturate(0.6);
-    transition: filter 6s ease;
-  }
-  .hero-bg-panel:nth-child(2) img { filter: brightness(0.5) saturate(0.7); }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,13,13,1) 0%, rgba(13,13,13,0.7) 40%, rgba(13,13,13,0.1) 100%);
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 0 3rem 4rem;
-    max-width: 900px;
-  }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1.5rem;
-  }
-  .hero-tag-line { width: 36px; height: 1px; background: var(--gold); }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    line-height: 0.92; letter-spacing: 0.02em;
-    color: var(--warm); margin-bottom: 1.75rem;
-  }
-  .hero h1 .accent { color: var(--gold); }
-  .hero h1 .italic { font-family: 'Lora', serif; font-size: 0.65em; font-weight: 400; font-style: italic; display: block; letter-spacing: 0.01em; }
-  .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-  .hero-desc {
-    font-family: 'Lora', serif; font-size: 1rem;
-    color: rgba(245,240,232,0.6); line-height: 1.8;
-    max-width: 420px;
-  }
-  .hero-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-  .btn-primary {
-    background: var(--gold); color: var(--black);
-    padding: 1rem 2.5rem; font-size: 0.78rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    font-weight: 700; transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .btn-primary:hover { background: #e8bc55; }
-  .hero-phones { text-align: right; }
-  .hero-phones-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-  .hero-phones a { display: block; font-size: 0.88rem; color: var(--warm); letter-spacing: 0.05em; transition: color 0.2s; }
-  .hero-phones a:hover { color: var(--gold); }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; padding: 86px 3rem 0;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(217,154,78,0.10), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(192,106,53,0.08), transparent 70%),
+    var(--espresso);
+}
+.hero-emberglow {
+  position: absolute; top: 20%; right: 8%;
+  width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,183,107,0.12), transparent 65%);
+  filter: blur(30px); pointer-events: none;
+  animation: flicker 5s ease-in-out infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+.hero-eyebrow {
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--honey);
+  display: flex; align-items: center; gap: 14px; margin-bottom: 2rem;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow::before { content: ''; width: 38px; height: 1px; background: var(--honey); }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 900; line-height: 1.02;
+  letter-spacing: -0.015em; color: var(--cream);
+  margin-bottom: 1.75rem; position: relative; z-index: 2;
+}
+.hero h1 em { font-style: italic; color: var(--amber); font-weight: 500; }
+.hero-sub {
+  font-size: 1.08rem; font-weight: 300; color: var(--taupe);
+  line-height: 1.85; max-width: 540px; margin-bottom: 2.75rem;
+  position: relative; z-index: 2;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 2; margin-bottom: 3rem; }
+.btn-honey {
+  background: var(--honey); color: var(--espresso);
+  padding: 1rem 2.5rem; border-radius: 40px;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-honey:hover { background: var(--amber); transform: translateY(-2px); }
+.btn-warm {
+  border: 1px solid var(--bark); color: var(--oat);
+  padding: 1rem 2.5rem; border-radius: 40px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-warm:hover { border-color: var(--honey); color: var(--honey); }
+.hero-phones {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  position: relative; z-index: 2;
+  padding-top: 2rem; border-top: 1px solid var(--softborder); max-width: 540px;
+}
+.hero-phone-label { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.hero-phone-item a { font-size: 0.95rem; font-weight: 600; color: var(--oat); transition: color 0.2s; }
+.hero-phone-item a:hover { color: var(--amber); }
 
-  /* ── TICKER ── */
-  .ticker {
-    background: var(--gold); overflow: hidden; padding: 0.9rem 0;
-    white-space: nowrap;
-  }
-  .ticker-inner {
-    display: inline-flex; gap: 0;
-    animation: ticker 20s linear infinite;
-  }
-  .ticker-item {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem; letter-spacing: 0.15em;
-    color: var(--black); padding: 0 2.5rem;
-    display: inline-flex; align-items: center; gap: 1.5rem;
-  }
-  .ticker-dot { width: 5px; height: 5px; background: rgba(0,0,0,0.3); border-radius: 50%; }
-  @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+/* ── TICKER ── */
+.ticker {
+  background: var(--honey);
+  padding: 0.85rem 0; overflow: hidden; white-space: nowrap;
+}
+.ticker-track { display: inline-flex; animation: tick 30s linear infinite; }
+.ticker-item {
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem; font-weight: 600; font-style: italic;
+  letter-spacing: 0.05em; color: var(--espresso);
+  padding: 0 1.75rem; display: inline-flex; align-items: center; gap: 1.5rem;
+}
+.ticker-star { font-style: normal; color: var(--ember); font-size: 0.7rem; }
+@keyframes tick { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
-  /* ── NUMBERS ── */
-  .numbers {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    border-bottom: 1px solid var(--border);
-  }
-  .number-item {
-    padding: 3rem 2.5rem;
-    border-right: 1px solid var(--border);
-    position: relative;
-  }
-  .number-item:last-child { border-right: none; }
-  .number-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem; color: var(--gold); line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .number-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-  .number-desc { font-size: 0.88rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem; line-height: 1.5; }
+/* ── STATS ── */
+.stats-bar { background: var(--walnut); display: grid; grid-template-columns: repeat(4,1fr); }
+.stat-cell { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid var(--softborder); }
+.stat-cell:last-child { border-right: none; }
+.stat-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: var(--honey); line-height: 1; }
+.stat-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; }
 
-  /* ── SERVICES ── */
-  .services { padding: 6rem 3rem; }
-  .services-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem; }
-  .eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px; }
-  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
-  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.03em; line-height: 1; }
-  .services-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
-  .service-item {
-    background: var(--charcoal); padding: 0;
-    overflow: hidden; position: relative; cursor: default;
-  }
-  .service-img-wrap { overflow: hidden; height: 300px; }
-  .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) saturate(0.7); transition: transform 0.5s, filter 0.5s; }
-  .service-item:hover .service-img-wrap img { transform: scale(1.06); filter: brightness(0.75) saturate(0.9); }
-  .service-body { padding: 1.75rem 2rem; }
-  .service-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(212,168,67,0.15); line-height: 1; margin-bottom: -0.5rem; }
-  .service-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
-  .service-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+/* ── ABOUT (cream warm section) ── */
+.about-section { background: var(--linen); color: var(--walnut); padding: 7rem 3rem; }
+.about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; }
+.label-warm {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ember);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;
+}
+.label-warm::before { content: ''; width: 22px; height: 2px; background: var(--ember); }
+.about-section h2 {
+  font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 1.5rem; color: var(--walnut);
+}
+.about-section h2 em { font-style: italic; color: var(--ember); }
+.about-section p { font-size: 0.96rem; color: #6b5640; line-height: 1.9; margin-bottom: 1rem; }
+.about-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.about-list li { font-size: 0.9rem; color: var(--cocoa); display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.about-list li::before { content: '✦'; color: var(--honey); font-size: 0.7rem; }
+.owner-stack { display: flex; flex-direction: column; gap: 1.25rem; }
+.owner-card {
+  background: var(--walnut); color: var(--cream);
+  padding: 2rem 2.25rem; border-radius: 14px;
+  border-left: 4px solid var(--honey);
+  box-shadow: 0 12px 30px rgba(34,22,16,0.18);
+}
+.owner-tag { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--honey); margin-bottom: 0.4rem; }
+.owner-name { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--cream); }
+.owner-phone { font-size: 1.2rem; font-weight: 700; color: var(--amber); display: block; margin-bottom: 0.3rem; transition: color 0.2s; }
+.owner-phone:hover { color: var(--cream); }
+.owner-email { font-size: 0.8rem; color: var(--taupe); transition: color 0.2s; }
+.owner-email:hover { color: var(--amber); }
 
-  /* ── SPLIT ABOUT ── */
-  .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-  .about-img-side { overflow: hidden; position: relative; }
-  .about-img-side img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.65) saturate(0.75); display: block; }
-  .about-img-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to right, transparent 60%, var(--black));
-  }
-  .about-text-side {
-    background: var(--black);
-    padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center;
-  }
-  .about-text-side h2 { margin-bottom: 1.5rem; }
-  .about-text-side h2 em { font-family: 'Lora', serif; font-style: italic; font-size: 0.75em; color: var(--gold); display: block; letter-spacing: 0.02em; }
-  .about-text-side p { font-family: 'Lora', serif; font-size: 0.98rem; line-height: 1.85; color: rgba(245,240,232,0.65); margin-bottom: 1rem; }
-  .about-checklist { list-style: none; margin: 1.5rem 0 2.5rem; display: flex; flex-direction: column; gap: 0.65rem; }
-  .about-checklist li { font-size: 0.85rem; color: rgba(245,240,232,0.6); display: flex; align-items: center; gap: 10px; }
-  .about-checklist li::before { content: '—'; color: var(--gold); font-weight: 700; }
-  .owners { display: flex; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
-  .owner-pill {
-    border: 1px solid rgba(212,168,67,0.3);
-    padding: 0.9rem 1.4rem;
-  }
-  .owner-pill-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.08em; color: var(--warm); }
-  .owner-pill-phone { font-size: 0.8rem; color: var(--gold); margin-top: 2px; letter-spacing: 0.04em; }
+/* ── SERVICES ── */
+.services-section { padding: 7rem 3rem; background: var(--espresso); }
+.services-inner { max-width: 1200px; margin: 0 auto; }
+.services-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3.5rem; }
+.services-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.1; }
+.services-head h2 em { font-style: italic; color: var(--honey); }
+.services-head p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 350px; }
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.svc {
+  background: var(--walnut); padding: 2.5rem 2.25rem;
+  border-radius: 16px; border: 1px solid var(--softborder);
+  position: relative; overflow: hidden; transition: transform 0.25s, border-color 0.25s;
+}
+.svc:hover { transform: translateY(-5px); border-color: var(--honey); }
+.svc-glow {
+  position: absolute; top: -40px; right: -40px;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,154,78,0.12), transparent 70%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.svc:hover .svc-glow { opacity: 1; }
+.svc-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--cocoa); display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; margin-bottom: 1.25rem;
+}
+.svc-name { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--cream); margin-bottom: 0.6rem; }
+.svc-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.svc-tag {
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--amber);
+  background: rgba(217,154,78,0.1); border-radius: 20px;
+  padding: 0.25rem 0.7rem;
+}
 
-  /* ── GALLERY ── */
-  .gallery { padding: 6rem 3rem; }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 240px 240px;
-    gap: 3px; margin-top: 2.5rem;
-  }
-  .g-item { overflow: hidden; }
-  .g-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.8); transition: filter 0.4s, transform 0.4s; display: block; }
-  .g-item:hover img { filter: brightness(0.9) saturate(1); transform: scale(1.04); }
-  .g-item.tall { grid-row: span 2; }
-  .g-item.wide { grid-column: span 2; }
+/* ── GALLERY ── */
+.gallery-section { padding: 7rem 3rem; background: var(--walnut); }
+.gallery-inner { max-width: 1200px; margin: 0 auto; }
+.gallery-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 3rem; }
+.gallery-section h2 em { font-style: italic; color: var(--honey); }
+.gal-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 1rem; }
+.gal {
+  background: var(--cocoa); border-radius: 14px;
+  border: 1px solid var(--softborder);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem; position: relative; overflow: hidden;
+}
+.gal.span2 { grid-row: span 2; }
+.gal-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(217,154,78,0.05), transparent 70%);
+}
+.gal-icon { font-size: 2.2rem; opacity: 0.3; }
+.gal-name { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--taupe); }
+.gal-soon { font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); opacity: 0.7; }
+.gallery-note { margin-top: 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.gallery-note a { color: var(--honey); }
 
-  /* ── REVIEWS ── */
-  .reviews { padding: 6rem 3rem; background: var(--charcoal); }
-  .reviews-inner { max-width: 1100px; margin: 0 auto; }
-  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3rem; background: var(--border); }
-  .review-card { background: var(--charcoal); padding: 3rem; }
-  .review-text {
-    font-family: 'Lora', serif; font-style: italic;
-    font-size: 1.15rem; line-height: 1.8;
-    color: rgba(245,240,232,0.8); margin-bottom: 1.75rem;
-    position: relative;
-  }
-  .review-text::before {
-    content: '\201C';
-    font-size: 5rem; color: var(--gold); opacity: 0.3;
-    position: absolute; top: -1.5rem; left: -1rem;
-    font-family: 'Lora', serif; line-height: 1;
-  }
-  .review-byline { display: flex; align-items: center; gap: 12px; }
-  .review-line { width: 24px; height: 1px; background: var(--gold); }
-  .review-name { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
-  .review-src { font-size: 0.72rem; color: var(--muted); margin-left: auto; }
-  .fb-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 1px solid rgba(255,255,255,0.15); color: var(--warm);
-    padding: 0.85rem 2rem; font-size: 0.78rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    margin-top: 2.5rem; transition: border-color 0.2s, color 0.2s;
-  }
-  .fb-btn:hover { border-color: var(--gold); color: var(--gold); }
+/* ── REVIEWS ── */
+.reviews-section { padding: 7rem 3rem; background: var(--espresso); }
+.reviews-inner { max-width: 1100px; margin: 0 auto; }
+.reviews-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 3rem; }
+.reviews-section h2 em { font-style: italic; color: var(--honey); }
+.rev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.rev {
+  background: var(--walnut); padding: 2.75rem;
+  border-radius: 16px; border: 1px solid var(--softborder);
+  position: relative;
+}
+.rev-mark { font-family: 'Fraunces', serif; font-size: 6rem; line-height: 0.7; color: var(--honey); opacity: 0.15; position: absolute; top: 1.5rem; right: 2rem; }
+.rev-stars { color: var(--honey); letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 1.25rem; }
+.rev-text { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.08rem; color: var(--oat); line-height: 1.8; margin-bottom: 1.5rem; }
+.rev-name { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--honey); display: flex; align-items: center; gap: 10px; }
+.rev-name::before { content: ''; width: 18px; height: 1px; background: var(--honey); }
+.fb-link {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 2.5rem;
+  background: var(--cocoa); color: var(--oat);
+  padding: 0.9rem 2rem; border-radius: 40px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; transition: background 0.2s;
+}
+.fb-link:hover { background: var(--bark); }
 
-  /* ── CONTACT ── */
-  .contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-  .contact-left {
-    background: var(--gold); padding: 5rem 4rem;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .contact-left h2 { color: var(--black); font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 0.5rem; }
-  .contact-left p { color: rgba(0,0,0,0.6); font-family: 'Lora', serif; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem; }
-  .contact-details { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-detail-row { display: flex; align-items: flex-start; gap: 12px; }
-  .contact-detail-icon { font-size: 1rem; margin-top: 2px; }
-  .contact-detail-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.5); margin-bottom: 2px; }
-  .contact-detail-val { font-size: 0.92rem; color: var(--black); font-weight: 600; }
-  .contact-detail-val a { color: var(--black); }
-  .contact-detail-val a:hover { opacity: 0.7; }
+/* ── CONTACT (cream warm) ── */
+.contact-section { background: var(--linen); color: var(--walnut); padding: 7rem 3rem; }
+.contact-inner { max-width: 1100px; margin: 0 auto; }
+.contact-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 0.75rem; color: var(--walnut); }
+.contact-section h2 em { font-style: italic; color: var(--ember); }
+.contact-tag { font-size: 0.92rem; color: #6b5640; margin-bottom: 3rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.crows { display: flex; flex-direction: column; gap: 1rem; }
+.crow {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  padding: 1.25rem 1.5rem; background: #fff;
+  border-radius: 12px; box-shadow: 0 4px 16px rgba(34,22,16,0.06);
+  transition: transform 0.2s;
+}
+.crow:hover { transform: translateX(4px); }
+.crow-icon {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  background: var(--linen); display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.crow-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ember); margin-bottom: 3px; }
+.crow-val { font-size: 0.92rem; color: var(--walnut); font-weight: 600; }
+.crow-val a { color: var(--walnut); transition: color 0.2s; }
+.crow-val a:hover { color: var(--ember); }
+.cform { display: flex; flex-direction: column; gap: 0.85rem; }
+.cform input, .cform select, .cform textarea {
+  width: 100%; background: #fff;
+  border: 1px solid #e0d3bd; border-radius: 10px;
+  padding: 0.95rem 1.1rem; color: var(--walnut);
+  font-family: 'Mulish', sans-serif; font-size: 0.9rem;
+  outline: none; transition: border-color 0.2s;
+}
+.cform input:focus, .cform select:focus, .cform textarea:focus { border-color: var(--honey); }
+.cform input::placeholder, .cform textarea::placeholder { color: #a8967c; }
+.cform select { color: #a8967c; }
+.cform select option { color: var(--walnut); }
+.cform textarea { height: 120px; resize: none; }
+.cform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.cform-submit {
+  background: var(--honey); color: var(--espresso);
+  border: none; width: 100%; padding: 1.05rem; border-radius: 40px;
+  font-family: 'Mulish', sans-serif; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+  transition: background 0.2s, transform 0.2s; margin-top: 0.5rem;
+}
+.cform-submit:hover { background: var(--ember); color: var(--cream); transform: translateY(-2px); }
 
-  .contact-right {
-    background: var(--concrete); padding: 5rem 4rem;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .contact-right h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: var(--warm); margin-bottom: 1.5rem; }
-  .form { display: flex; flex-direction: column; gap: 0; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
-  .form input, .form textarea, .form select {
-    background: rgba(255,255,255,0.05);
-    border: none; border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 1rem 0; color: var(--warm);
-    font-size: 0.88rem; font-family: 'Inter', sans-serif;
-    outline: none; width: 100%; margin-bottom: 1px;
-    transition: border-color 0.2s;
-  }
-  .form input:focus, .form textarea:focus, .form select:focus { border-color: var(--gold); }
-  .form input::placeholder, .form textarea::placeholder { color: rgba(245,240,232,0.3); }
-  .form select { color: rgba(245,240,232,0.4); }
-  .form select option { background: var(--concrete); color: var(--warm); }
-  .form textarea { height: 100px; resize: none; margin-top: 1px; }
-  .form-submit {
-    background: var(--gold); color: var(--black);
-    border: none; padding: 1rem 2rem;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem; letter-spacing: 0.15em;
-    cursor: pointer; margin-top: 1.5rem;
-    transition: background 0.2s; width: 100%;
-  }
-  .form-submit:hover { background: #e8bc55; }
+/* ── FOOTER ── */
+footer {
+  background: var(--espresso); border-top: 1px solid var(--softborder);
+  padding: 2.5rem 3rem; display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 2rem;
+}
+.footer-logo img { height: 56px; width: auto; }
+.footer-mid { text-align: center; }
+.footer-biz { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--honey); }
+.footer-copy { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+.footer-area { text-align: right; font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--black); border-top: 1px solid var(--border);
-    padding: 2.5rem 3rem;
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-  }
-  .footer-logo img { height: 52px; width: auto; }
-  .footer-center { text-align: center; }
-  .footer-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--gold); }
-  .footer-copy { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
-  .footer-right { text-align: right; font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    .hero-content { padding: 0 1.5rem 3rem; }
-    .hero h1 { font-size: clamp(3.5rem, 14vw, 6rem); }
-    .hero-bottom { flex-direction: column; align-items: flex-start; }
-    .hero-actions { align-items: flex-start; }
-    .hero-phones { text-align: left; }
-    .numbers { grid-template-columns: 1fr 1fr; }
-    .services { padding: 4rem 1.5rem; }
-    .services-list { grid-template-columns: 1fr; }
-    .about { grid-template-columns: 1fr; }
-    .about-img-side { height: 300px; }
-    .about-text-side { padding: 3rem 1.5rem; }
-    .gallery { padding: 4rem 1.5rem; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .g-item.tall, .g-item.wide { grid-row: span 1; grid-column: span 1; }
-    .reviews { padding: 4rem 1.5rem; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .contact { grid-template-columns: 1fr; }
-    .contact-left, .contact-right { padding: 3rem 1.5rem; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
-    .footer-right { text-align: center; }
-  }
-
-  .hero-bg-placeholder {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  }
-  .service-placeholder {
-    background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .service-placeholder span {
-    font-family: "Bebas Neue", sans-serif; font-size: 1.1rem;
-    letter-spacing: 0.15em; color: rgba(212,168,67,0.4); text-transform: uppercase;
-  }
-  .about-placeholder {
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .about-placeholder span {
-    font-family: "Bebas Neue", sans-serif; font-size: 1.2rem;
-    letter-spacing: 0.2em; color: rgba(212,168,67,0.4); text-transform: uppercase;
-  }
-  .gallery-placeholder {
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    display: flex; align-items: center; justify-content: center;
-    min-height: 240px;
-  }
-  .gallery-placeholder span {
-    font-family: "Bebas Neue", sans-serif; font-size: 1rem;
-    letter-spacing: 0.15em; color: rgba(212,168,67,0.35); text-transform: uppercase;
-  }
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { padding: 6rem 1.5rem 3rem; }
+  .hero-phones { gap: 1.5rem; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .stat-cell:nth-child(2) { border-right: none; }
+  .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid var(--softborder); }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal { min-height: 180px; }
+  .gal.span2 { grid-column: span 2; grid-row: span 1; }
+  .rev-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cform-row { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr; text-align: center; }
+  .footer-area { text-align: center; }
+  .about-section, .services-section, .gallery-section, .reviews-section, .contact-section { padding: 5rem 1.5rem; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <img src="hibbard-logo.png" alt="Hibbard Floor & More" />
-  </div>
+  <div class="nav-logo"><img src="hibbard-logo.png" alt="Hibbard Floor & More" /></div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#about">About</a>
@@ -376,267 +357,247 @@
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-bg">
-    <div class="hero-bg-panel hero-bg-placeholder"></div>
-    <div class="hero-bg-panel hero-bg-placeholder"></div>
-    <div class="hero-bg-panel hero-bg-placeholder"></div>
-    <div class="hero-bg-panel hero-bg-placeholder"></div>
+<section class="hero">
+  <div class="hero-emberglow"></div>
+  <div class="hero-eyebrow">Family-Owned &nbsp;·&nbsp; Dayton to Cincinnati</div>
+  <h1>Floors that make<br>a house feel like<br><em>home.</em></h1>
+  <p class="hero-sub">Hardwood, tile, LVP, carpet, and more — installed by a family-run crew that treats your home like our own. Warm craftsmanship, honest pricing, and work that lasts a lifetime.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-honey">Get a Free Estimate</a>
+    <a href="#services" class="btn-warm">Explore Our Work</a>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-tag"><span class="hero-tag-line"></span> Family-Owned · Dayton to Cincinnati</div>
-    <h1>
-      <span class="italic">floors done right</span>
-      THE <span class="accent">FIRST</span><br>TIME.
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-desc">Hard surface flooring, tile, and carpet — installed by craftsmen who treat every job like it's their own home. Free estimates. No pressure.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Get a Free Estimate</a>
-        <div class="hero-phones">
-          <div class="hero-phones-label">Call either owner directly</div>
-          <a href="tel:+15133775955">Andy — (513) 377-5955</a>
-          <a href="tel:+15134072426">Anthony — (513) 407-2426</a>
-        </div>
-      </div>
+  <div class="hero-phones">
+    <div class="hero-phone-item">
+      <div class="hero-phone-label">Andy Hibbard</div>
+      <a href="tel:+15133775955">(513) 377-5955</a>
+    </div>
+    <div class="hero-phone-item">
+      <div class="hero-phone-label">Anthony Hibbard</div>
+      <a href="tel:+15134072426">(513) 407-2426</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner">
-    <span class="ticker-item">Hardwood & Laminate <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Tile & Stone <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Custom Showers <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Kitchen Backsplash <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Carpet <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Free Estimates <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Dayton → Cincinnati <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Father & Son Team <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Hardwood & Laminate <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Tile & Stone <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Custom Showers <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Kitchen Backsplash <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Carpet <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Free Estimates <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Dayton → Cincinnati <span class="ticker-dot"></span></span>
-    <span class="ticker-item">Father & Son Team <span class="ticker-dot"></span></span>
+  <div class="ticker-track">
+    <span class="ticker-item">Hardwood &amp; Laminate <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Luxury Vinyl Plank <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Tile &amp; Stone <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Custom Showers <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Carpet Installation <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Kitchen Backsplash <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Free Estimates <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Dayton → Cincinnati <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Hardwood &amp; Laminate <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Luxury Vinyl Plank <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Tile &amp; Stone <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Custom Showers <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Carpet Installation <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Kitchen Backsplash <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Free Estimates <span class="ticker-star">✦</span></span>
+    <span class="ticker-item">Dayton → Cincinnati <span class="ticker-star">✦</span></span>
   </div>
 </div>
 
-<!-- NUMBERS -->
-<div class="numbers">
-  <div class="number-item">
-    <div class="number-num">10+</div>
-    <div class="number-label">Years Installing</div>
-    <div class="number-desc">A decade of craftsmanship across Southwest Ohio</div>
-  </div>
-    <div class="number-item">
-    <div class="number-num">2</div>
-    <div class="number-label">Owners Who Care</div>
-    <div class="number-desc">Andy and Anthony personally oversee every project</div>
-  </div>
-  <div class="number-item">
-    <div class="number-num">100%</div>
-    <div class="number-label">Free Estimates</div>
-    <div class="number-desc">No-pressure quotes, always at no cost</div>
-  </div>
-  <div class="number-item">
-    <div class="number-num">3</div>
-    <div class="number-label">Core Services</div>
-    <div class="number-desc">Hard surface, tile, and carpet under one crew</div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<div class="services" id="services">
-  <div class="services-header">
-    <div>
-      <div class="eyebrow">What we install</div>
-      <h2>Every kind of floor,<br>built to last.</h2>
-    </div>
-    <p style="max-width:360px;color:var(--muted);font-size:0.9rem;line-height:1.7;">From wide-plank hardwood to a full bathroom retile — we handle the prep, the layout, and the finish with a trusted crew we've worked with for years. No shortcuts, ever.</p>
-  </div>
-  <div class="services-list">
-    <div class="service-item">
-      <div class="service-img-wrap service-placeholder"><span>Tile & Stone</span></div>
-      <div class="service-body">
-        <div class="service-num">01</div>
-        <div class="service-title">Tile & Stone</div>
-        <p class="service-desc">Bathrooms, kitchens, fireplaces, entryways. Precision-set tile with crisp grout lines that look incredible and last for decades.</p>
-      </div>
-    </div>
-    <div class="service-item">
-      <div class="service-img-wrap service-placeholder"><span>Custom Showers</span></div>
-      <div class="service-body">
-        <div class="service-num">02</div>
-        <div class="service-title">Custom Showers</div>
-        <p class="service-desc">Full shower builds floor to ceiling. Subway tile, accent bands, mosaic floors. Built watertight, finished beautifully.</p>
-      </div>
-    </div>
-    <div class="service-item">
-      <div class="service-img-wrap service-placeholder"><span>Hardwood & Laminate</span></div>
-      <div class="service-body">
-        <div class="service-num">03</div>
-        <div class="service-title">Hardwood & Laminate</div>
-        <p class="service-desc">Solid hardwood, engineered, and laminate installs. Tight seams, clean transitions, flawless finish throughout your home.</p>
-      </div>
-    </div>
-  </div>
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-cell"><div class="stat-num">10+</div><div class="stat-label">Years Installing</div></div>
+  <div class="stat-cell"><div class="stat-num">6</div><div class="stat-label">Services Offered</div></div>
+  <div class="stat-cell"><div class="stat-num">$0</div><div class="stat-label">Cost to Estimate</div></div>
+  <div class="stat-cell"><div class="stat-num">2</div><div class="stat-label">Owners Who Care</div></div>
 </div>
 
 <!-- ABOUT -->
-<div class="about" id="about">
-  <div class="about-img-side">
-    <img src="tile_4.jpg" alt="Hibbard Floor & More craftsmanship" />
-    <div class="about-img-overlay"></div>
-  </div>
-  <div class="about-text-side">
-    <div class="eyebrow">The Hibbards</div>
-    <h2>Father & Son.<br><em>One serious standard.</em></h2>
-    <p>Andy and Anthony Hibbard founded Hibbard Floor & More on a simple idea: do flooring the way you'd want it done in your own home. When we bring in help, it's only trusted installers we've worked with for years — people who share our standard.</p>
-    <p>Family-owned, family-run, and proud to serve everywhere from Dayton to Cincinnati and the towns in between.</p>
-    <ul class="about-checklist">
-      <li>Free, no-pressure estimates</li>
-      <li>Hard surface, tile, and carpet under one crew</li>
-      <li>Clean job sites and on-time finishes</li>
-      <li>Trusted by designers, contractors, and homeowners</li>
-    </ul>
-    <div class="owners">
-      <div class="owner-pill">
-        <div class="owner-pill-name">Andy Hibbard</div>
-        <a href="tel:+15133775955" class="owner-pill-phone">(513) 377-5955</a>
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="label-warm">The Hibbards</div>
+      <h2>Father & son,<br>building floors that <em>last.</em></h2>
+      <p>Andy and Anthony Hibbard started this business on a handshake and a reputation. A decade later, that reputation is what keeps the phone ringing.</p>
+      <p>We don't cut corners, and we don't disappear after the job starts. When we bring in extra hands, it's only trusted installers who work the same way we do — like it's their own home.</p>
+      <ul class="about-list">
+        <li>Free, no-pressure estimates</li>
+        <li>Trusted crew on every job</li>
+        <li>Clean job sites, on-time finishes</li>
+        <li>Loved by designers, contractors & homeowners</li>
+        <li>Serving Dayton → Cincinnati & everywhere between</li>
+      </ul>
+    </div>
+    <div class="owner-stack">
+      <div class="owner-card">
+        <div class="owner-tag">Owner</div>
+        <div class="owner-name">Andy Hibbard</div>
+        <a href="tel:+15133775955" class="owner-phone">(513) 377-5955</a>
+        <a href="mailto:hibbardfloorandmore@gmail.com" class="owner-email">hibbardfloorandmore@gmail.com</a>
       </div>
-      <div class="owner-pill">
-        <div class="owner-pill-name">Anthony Hibbard</div>
-        <a href="tel:+15134072426" class="owner-pill-phone">(513) 407-2426</a>
+      <div class="owner-card">
+        <div class="owner-tag">Owner</div>
+        <div class="owner-name">Anthony Hibbard</div>
+        <a href="tel:+15134072426" class="owner-phone">(513) 407-2426</a>
+        <a href="mailto:hibbardfloorandmore@gmail.com" class="owner-email">hibbardfloorandmore@gmail.com</a>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="services-head">
+      <div>
+        <div class="label-warm" style="color:var(--honey)">What we install</div>
+        <h2>Every floor,<br>done <em>right.</em></h2>
+      </div>
+      <p>From wide-plank hardwood to a full bathroom retile — we handle the prep, layout, and finish with a trusted crew. No shortcuts, ever.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">🪨</div>
+        <div class="svc-name">Tile & Stone</div>
+        <p class="svc-desc">Precision-set tile with crisp grout lines. Bathrooms, kitchens, fireplaces, and entryways built to last for decades.</p>
+        <div class="svc-tags"><span class="svc-tag">Bathroom</span><span class="svc-tag">Kitchen</span><span class="svc-tag">Fireplace</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">🚿</div>
+        <div class="svc-name">Custom Showers</div>
+        <p class="svc-desc">Full shower builds floor to ceiling. Subway tile, accent bands, and mosaic floors — built watertight and finished beautifully.</p>
+        <div class="svc-tags"><span class="svc-tag">Floor to Ceiling</span><span class="svc-tag">Mosaic</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">🪵</div>
+        <div class="svc-name">Hardwood & Laminate</div>
+        <p class="svc-desc">Solid hardwood, engineered, and laminate installs with tight seams and a flawless finish throughout your home.</p>
+        <div class="svc-tags"><span class="svc-tag">Solid</span><span class="svc-tag">Engineered</span><span class="svc-tag">Laminate</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">✨</div>
+        <div class="svc-name">Luxury Vinyl Plank</div>
+        <p class="svc-desc">LVP is durable, waterproof, and stunning. Perfect for kitchens, bathrooms, basements, and busy high-traffic areas.</p>
+        <div class="svc-tags"><span class="svc-tag">Waterproof</span><span class="svc-tag">Basement</span><span class="svc-tag">Durable</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">🛋️</div>
+        <div class="svc-name">Carpet</div>
+        <p class="svc-desc">Plush bedrooms, carpeted stairs, and full home installs. Stretched tight, seamed clean, and finished right every time.</p>
+        <div class="svc-tags"><span class="svc-tag">Bedroom</span><span class="svc-tag">Staircase</span><span class="svc-tag">Full Home</span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-glow"></div>
+        <div class="svc-icon">🍳</div>
+        <div class="svc-name">Kitchen Backsplash</div>
+        <p class="svc-desc">Transform your kitchen with a backsplash that ties the whole room together. Subway tile, specialty materials, and more.</p>
+        <div class="svc-tags"><span class="svc-tag">Subway Tile</span><span class="svc-tag">Specialty</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- GALLERY -->
-<div class="gallery" id="gallery">
-  <div class="eyebrow">Our work</div>
-  <h2>Real jobs. Real results.</h2>
-  <div class="gallery-grid">
-    <div class="g-item tall gallery-placeholder"><span>Custom Shower</span></div>
-    <div class="g-item gallery-placeholder"><span>Tile Floor</span></div>
-    <div class="g-item gallery-placeholder"><span>Fireplace Tile</span></div>
-    <div class="g-item wide gallery-placeholder"><span>Carpet Installation</span></div>
+<section class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="label-warm" style="color:var(--honey)">Our work</div>
+    <h2>The proof is in the <em>floor.</em></h2>
+    <div class="gal-grid">
+      <div class="gal span2"><div class="gal-glow"></div><div class="gal-icon">🪨</div><div class="gal-name">Tile & Stone</div><div class="gal-soon">Photos coming soon</div></div>
+      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🚿</div><div class="gal-name">Custom Shower</div><div class="gal-soon">Photos coming soon</div></div>
+      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🍳</div><div class="gal-name">Backsplash</div><div class="gal-soon">Photos coming soon</div></div>
+      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🪵</div><div class="gal-name">Hardwood</div><div class="gal-soon">Photos coming soon</div></div>
+      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">✨</div><div class="gal-name">LVP</div><div class="gal-soon">Photos coming soon</div></div>
+      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🛋️</div><div class="gal-name">Carpet</div><div class="gal-soon">Photos coming soon</div></div>
+    </div>
+    <p class="gallery-note">Real project photos coming soon — follow us on <a href="https://www.facebook.com/HibbardFloorandMore" target="_blank">Facebook</a> to see our latest work.</p>
   </div>
-</div>
+</section>
 
 <!-- REVIEWS -->
-<div class="reviews" id="reviews">
+<section class="reviews-section" id="reviews">
   <div class="reviews-inner">
-    <div class="eyebrow">From our customers</div>
-    <h2>Kind words.</h2>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <p class="review-text">Beautiful as always! Couldn't ask for better professionals to install your tile!</p>
-        <div class="review-byline">
-          <span class="review-line"></span>
-          <span class="review-name">Debby</span>
-          <span class="review-src">Facebook Review ★★★★★</span>
-        </div>
+    <div class="label-warm" style="color:var(--honey)">What people say</div>
+    <h2>Kind words from <em>real customers.</em></h2>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="rev-mark">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Beautiful as always! Couldn't ask for better professionals to install your tile!</p>
+        <div class="rev-name">Debby — Facebook Review</div>
       </div>
-      <div class="review-card">
-        <p class="review-text">Yes! It looks so good! The designer is happy, the contractor is happy and the clients are happy! Can't wait to work with y'all again!</p>
-        <div class="review-byline">
-          <span class="review-line"></span>
-          <span class="review-name">Amanda</span>
-          <span class="review-src">Facebook Review ★★★★★</span>
-        </div>
+      <div class="rev">
+        <div class="rev-mark">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Yes! It looks so good! The designer is happy, the contractor is happy and the clients are happy! Can't wait to work with y'all again!</p>
+        <div class="rev-name">Amanda — Facebook Review</div>
       </div>
     </div>
-    <a href="https://www.facebook.com/HibbardFloorandMore" target="_blank" class="fb-btn">
-      👍 &nbsp;Read More Reviews on Facebook
-    </a>
+    <a href="https://www.facebook.com/HibbardFloorandMore" target="_blank" class="fb-link">👍 &nbsp; Read More Reviews on Facebook</a>
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
-<div class="contact" id="contact">
-  <div class="contact-left">
-    <h2>Let's Talk About Your Floor.</h2>
-    <p>Call either owner directly or fill out the form — we'll come take a look and give you an honest quote. No pressure, ever.</p>
-    <div class="contact-details">
-      <div class="contact-detail-row">
-        <span class="contact-detail-icon">📞</span>
-        <div>
-          <div class="contact-detail-label">Andy Hibbard</div>
-          <div class="contact-detail-val"><a href="tel:+15133775955">(513) 377-5955</a></div>
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="label-warm">Get in touch</div>
+    <h2>Let's talk about <em>your floor.</em></h2>
+    <p class="contact-tag">Call either owner directly or fill out the form — we'll give you an honest quote with zero pressure.</p>
+    <div class="contact-grid">
+      <div class="crows">
+        <div class="crow">
+          <div class="crow-icon">📞</div>
+          <div><div class="crow-label">Andy Hibbard — Owner</div><div class="crow-val"><a href="tel:+15133775955">(513) 377-5955</a></div></div>
+        </div>
+        <div class="crow">
+          <div class="crow-icon">📞</div>
+          <div><div class="crow-label">Anthony Hibbard — Owner</div><div class="crow-val"><a href="tel:+15134072426">(513) 407-2426</a></div></div>
+        </div>
+        <div class="crow">
+          <div class="crow-icon">✉️</div>
+          <div><div class="crow-label">Email</div><div class="crow-val"><a href="mailto:hibbardfloorandmore@gmail.com">hibbardfloorandmore@gmail.com</a></div></div>
+        </div>
+        <div class="crow">
+          <div class="crow-icon">📘</div>
+          <div><div class="crow-label">Facebook</div><div class="crow-val"><a href="https://www.facebook.com/HibbardFloorandMore" target="_blank">@HibbardFloorandMore</a></div></div>
+        </div>
+        <div class="crow">
+          <div class="crow-icon">📍</div>
+          <div><div class="crow-label">Service Area</div><div class="crow-val">Dayton → Cincinnati, OH & between</div></div>
         </div>
       </div>
-      <div class="contact-detail-row">
-        <span class="contact-detail-icon">📞</span>
-        <div>
-          <div class="contact-detail-label">Anthony Hibbard</div>
-          <div class="contact-detail-val"><a href="tel:+15134072426">(513) 407-2426</a></div>
+      <form class="cform" action="https://formspree.io/f/hibbardfloor" method="POST" onsubmit="return false;">
+        <div class="cform-row">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
         </div>
-      </div>
-      <div class="contact-detail-row">
-        <span class="contact-detail-icon">✉️</span>
-        <div>
-          <div class="contact-detail-label">Email</div>
-          <div class="contact-detail-val"><a href="mailto:hibbardfloorandmore@gmail.com">hibbardfloorandmore@gmail.com</a></div>
-        </div>
-      </div>
-      <div class="contact-detail-row">
-        <span class="contact-detail-icon">📘</span>
-        <div>
-          <div class="contact-detail-label">Facebook</div>
-          <div class="contact-detail-val"><a href="https://www.facebook.com/HibbardFloorandMore" target="_blank">@HibbardFloorandMore</a></div>
-        </div>
-      </div>
-      <div class="contact-detail-row">
-        <span class="contact-detail-icon">📍</span>
-        <div>
-          <div class="contact-detail-label">Service Area</div>
-          <div class="contact-detail-val">Dayton → Cincinnati, OH & everywhere between</div>
-        </div>
-      </div>
+        <input type="email" name="email" placeholder="Email address" />
+        <select name="service">
+          <option value="" disabled selected>Type of flooring needed</option>
+          <option>Tile & Stone</option>
+          <option>Custom Shower</option>
+          <option>Hardwood & Laminate</option>
+          <option>Luxury Vinyl Plank (LVP)</option>
+          <option>Carpet</option>
+          <option>Kitchen Backsplash</option>
+          <option>Not sure yet</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your project — room, size, timeline..."></textarea>
+        <button type="submit" class="cform-submit">Request Free Estimate</button>
+      </form>
     </div>
   </div>
-  <div class="contact-right">
-    <h3>Request a Free Estimate</h3>
-    <form class="form" action="https://formspree.io/f/hibbardfloor" method="POST" onsubmit="return false;">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="tel" name="phone" placeholder="Phone number" required />
-      </div>
-      <input type="email" name="email" placeholder="Email address" />
-      <select name="service">
-        <option value="" disabled selected>Type of flooring needed</option>
-        <option>Tile & Stone</option>
-        <option>Hardwood & Laminate</option>
-        <option>Custom Shower</option>
-        <option>Carpet</option>
-        <option>Kitchen Backsplash</option>
-        <option>Not sure yet</option>
-      </select>
-      <textarea name="message" placeholder="Tell us about your project — room, size, timeline..."></textarea>
-      <button type="submit" class="form-submit">Send My Request</button>
-    </form>
-  </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <img src="hibbard-logo.png" alt="Hibbard Floor & More" />
-  </div>
-  <div class="footer-center">
-    <div class="footer-name">Hibbard Floor & More</div>
+  <div class="footer-logo"><img src="hibbard-logo.png" alt="Hibbard Floor & More" /></div>
+  <div class="footer-mid">
+    <div class="footer-biz">Hibbard Floor & More</div>
     <div class="footer-copy">© 2026 · All rights reserved · Website by NextgenSites</div>
   </div>
-  <div class="footer-right">
-    Serving Dayton → Cincinnati<br>
-    & Everywhere Between
-  </div>
+  <div class="footer-area">Dayton → Cincinnati<br>& Everywhere Between</div>
 </footer>
 
 </body>

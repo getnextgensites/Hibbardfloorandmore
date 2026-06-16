@@ -215,23 +215,33 @@ nav {
 /* ── GALLERY ── */
 .gallery-section { padding: 7rem 3rem; background: var(--walnut); }
 .gallery-inner { max-width: 1200px; margin: 0 auto; }
-.gallery-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 3rem; }
+.gallery-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1.5rem; }
 .gallery-section h2 em { font-style: italic; color: var(--honey); }
-.gal-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 1rem; }
-.gal {
-  background: var(--cocoa); border-radius: 14px;
-  border: 1px solid var(--softborder);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.6rem; position: relative; overflow: hidden;
+
+.gal-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem; }
+.gal-filter {
+  background: transparent; border: 1px solid var(--softborder);
+  color: var(--taupe); padding: 0.6rem 1.4rem; border-radius: 40px;
+  font-family: 'Mulish', sans-serif; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s;
 }
-.gal.span2 { grid-row: span 2; }
-.gal-glow {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, rgba(201,168,56,0.05), transparent 70%);
+.gal-filter:hover { border-color: var(--honey); color: var(--amber); }
+.gal-filter.active { background: var(--honey); border-color: var(--honey); color: var(--espresso); }
+
+.photo-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
-.gal-icon { font-size: 2.2rem; opacity: 0.3; }
-.gal-name { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--taupe); }
-.gal-soon { font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); opacity: 0.7; }
+.photo {
+  position: relative; overflow: hidden; border-radius: 14px;
+  border: 1px solid var(--softborder); aspect-ratio: 3/4;
+  background: var(--cocoa);
+}
+.photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.4s ease;
+}
+.photo:hover img { transform: scale(1.05); }
 .gallery-note { margin-top: 1.5rem; text-align: center; font-size: 0.82rem; color: var(--muted); font-style: italic; }
 .gallery-note a { color: var(--honey); }
 
@@ -331,9 +341,8 @@ footer {
   .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid var(--softborder); }
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
   .svc-grid { grid-template-columns: 1fr; }
-  .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .gal { min-height: 180px; }
-  .gal.span2 { grid-column: span 2; grid-row: span 1; }
+  .photo-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .gal-filter { padding: 0.5rem 1rem; font-size: 0.72rem; }
   .rev-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .cform-row { grid-template-columns: 1fr; }
@@ -504,17 +513,47 @@ footer {
   <div class="gallery-inner">
     <div class="label-warm" style="color:var(--honey)">Our work</div>
     <h2>The proof is in the <em>floor.</em></h2>
-    <div class="gal-grid">
-      <div class="gal span2"><div class="gal-glow"></div><div class="gal-icon">🪨</div><div class="gal-name">Tile & Stone</div><div class="gal-soon">Photos coming soon</div></div>
-      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🚿</div><div class="gal-name">Custom Shower</div><div class="gal-soon">Photos coming soon</div></div>
-      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🍳</div><div class="gal-name">Backsplash</div><div class="gal-soon">Photos coming soon</div></div>
-      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🪵</div><div class="gal-name">Hardwood</div><div class="gal-soon">Photos coming soon</div></div>
-      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">✨</div><div class="gal-name">LVP</div><div class="gal-soon">Photos coming soon</div></div>
-      <div class="gal"><div class="gal-glow"></div><div class="gal-icon">🛋️</div><div class="gal-name">Carpet</div><div class="gal-soon">Photos coming soon</div></div>
+
+    <div class="gal-filters">
+      <button class="gal-filter active" data-filter="all" onclick="filterGallery(this,'all')">All Work</button>
+      <button class="gal-filter" data-filter="tile" onclick="filterGallery(this,'tile')">Tile</button>
+      <button class="gal-filter" data-filter="wood" onclick="filterGallery(this,'wood')">Hardwood / Laminate / LVP</button>
+      <button class="gal-filter" data-filter="carpet" onclick="filterGallery(this,'carpet')">Carpet</button>
     </div>
-    <p class="gallery-note">Real project photos coming soon — follow us on <a href="https://www.facebook.com/HibbardFloorandMore" target="_blank">Facebook</a> to see our latest work.</p>
+
+    <div class="photo-grid">
+      <div class="photo tile"><img src="gallery/tile-1.jpg" alt="Marble tile floor installation" loading="lazy"></div>
+      <div class="photo tile"><img src="gallery/tile-3.jpg" alt="Custom tile shower" loading="lazy"></div>
+      <div class="photo tile"><img src="gallery/tile-2.jpg" alt="Marble fireplace tile surround" loading="lazy"></div>
+      <div class="photo tile"><img src="gallery/tile-4.jpg" alt="Kitchen tile backsplash" loading="lazy"></div>
+      <div class="photo wood"><img src="gallery/wood-3.jpg" alt="Hardwood dining room floor" loading="lazy"></div>
+      <div class="photo wood"><img src="gallery/wood-4.jpg" alt="Hardwood staircase and floor" loading="lazy"></div>
+      <div class="photo wood"><img src="gallery/wood-1.jpg" alt="Luxury vinyl plank living room" loading="lazy"></div>
+      <div class="photo wood"><img src="gallery/wood-2.jpg" alt="Wide plank LVP flooring" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-4.jpg" alt="Patterned stair runner carpet" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-2.jpg" alt="Carpeted basement staircase" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-5.jpg" alt="Patterned carpet stairs" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-1.jpg" alt="Basement rec room carpet" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-3.jpg" alt="Bedroom carpet installation" loading="lazy"></div>
+      <div class="photo carpet"><img src="gallery/carpet-6.jpg" alt="Walk-in closet carpet" loading="lazy"></div>
+    </div>
+    <p class="gallery-note">Every photo is a real Hibbard Floor &amp; More project. Follow us on <a href="https://www.facebook.com/HibbardFloorandMore" target="_blank">Facebook</a> for our latest work.</p>
   </div>
 </section>
+
+<script>
+function filterGallery(btn, cat) {
+  document.querySelectorAll('.gal-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.photo').forEach(p => {
+    if (cat === 'all' || p.classList.contains(cat)) {
+      p.style.display = '';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+</script>
 
 <!-- REVIEWS -->
 <section class="reviews-section" id="reviews">

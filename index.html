@@ -606,6 +606,22 @@ footer {
   .quiz-question { font-size: 1.35rem; }
 }
 
+.builtby {
+  background: #1a110b; text-align: center;
+  padding: 1.1rem 1.5rem; font-family: 'Mulish', sans-serif;
+  font-size: 0.8rem; color: var(--muted); letter-spacing: 0.02em;
+  border-top: 1px solid var(--softborder);
+}
+.builtby a {
+  color: var(--honey); font-weight: 700; text-decoration: none;
+  transition: color 0.2s;
+}
+.builtby a:hover { color: var(--amber); text-decoration: underline; }
+.builtby-tag { color: #6b5640; }
+@media (max-width: 600px) {
+  .builtby-tag { display: block; margin-top: 2px; }
+}
+
 </style>
 </head>
 <body>
@@ -1242,10 +1258,16 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="footer-logo"><img src="hibbard-logo.png" alt="Hibbard Floor & More" /></div>
   <div class="footer-mid">
     <div class="footer-biz">Hibbard Floor & More</div>
-    <div class="footer-copy">© 2026 · All rights reserved · Website by NextgenSites</div>
+    <div class="footer-copy">© 2026 · All rights reserved</div>
   </div>
   <div class="footer-area">Dayton → Cincinnati<br>& Everywhere Between</div>
 </footer>
+
+<div class="builtby">
+  Website designed &amp; built by
+  <a href="https://getnextgensites.github.io/nextgensites" target="_blank" rel="noopener">Nextgen Sites</a>
+  <span class="builtby-tag">· Affordable websites for local businesses</span>
+</div>
 
 </body>
 </html>

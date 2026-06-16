@@ -188,8 +188,26 @@ nav {
   background: var(--walnut); padding: 2.5rem 2.25rem;
   border-radius: 16px; border: 1px solid var(--softborder);
   position: relative; overflow: hidden; transition: transform 0.25s, border-color 0.25s;
+  cursor: pointer;
 }
 .svc:hover { transform: translateY(-5px); border-color: var(--honey); }
+.svc-link {
+  margin-top: 1.25rem; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.04em; color: var(--honey);
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.svc:hover .svc-link { opacity: 1; transform: translateX(0); }
+@media (hover: none) { .svc-link { opacity: 1; transform: none; } }
+
+/* gallery highlight pulse when jumped to from a service */
+@keyframes galleryPulse {
+  0% { box-shadow: 0 0 0 0 rgba(201,168,56,0.0); }
+  30% { box-shadow: 0 0 0 4px rgba(201,168,56,0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(201,168,56,0.0); }
+}
+.photo-grid.pulse .photo { animation: galleryPulse 1.1s ease; }
+.gal-filter.flash { animation: galleryPulse 1.1s ease; }
 .svc-glow {
   position: absolute; top: -40px; right: -40px;
   width: 120px; height: 120px; border-radius: 50%;
@@ -702,47 +720,53 @@ footer {
       <p>From wide-plank hardwood to a full bathroom retile — we handle the prep, layout, and finish with a trusted crew. No shortcuts, ever.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('tile')">
         <div class="svc-glow"></div>
         <div class="svc-icon">🪨</div>
         <div class="svc-name">Tile & Stone</div>
         <p class="svc-desc">Precision-set tile with crisp grout lines. Bathrooms, kitchens, fireplaces, and entryways built to last for decades.</p>
         <div class="svc-tags"><span class="svc-tag">Bathroom</span><span class="svc-tag">Kitchen</span><span class="svc-tag">Fireplace</span></div>
+        <div class="svc-link">See tile work in our gallery →</div>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('tile')">
         <div class="svc-glow"></div>
         <div class="svc-icon">🚿</div>
         <div class="svc-name">Custom Showers</div>
         <p class="svc-desc">Full shower builds floor to ceiling. Subway tile, accent bands, and mosaic floors — built watertight and finished beautifully.</p>
         <div class="svc-tags"><span class="svc-tag">Floor to Ceiling</span><span class="svc-tag">Mosaic</span></div>
+        <div class="svc-link">See tile work in our gallery →</div>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('wood')">
         <div class="svc-glow"></div>
         <div class="svc-icon">🪵</div>
         <div class="svc-name">Hardwood & Laminate</div>
         <p class="svc-desc">Solid hardwood, engineered, and laminate installs with tight seams and a flawless finish throughout your home.</p>
         <div class="svc-tags"><span class="svc-tag">Solid</span><span class="svc-tag">Engineered</span><span class="svc-tag">Laminate</span></div>
+        <div class="svc-link">See hardwood work in our gallery →</div>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('wood')">
         <div class="svc-glow"></div>
         <div class="svc-icon">✨</div>
         <div class="svc-name">Luxury Vinyl Plank</div>
         <p class="svc-desc">LVP is durable, waterproof, and stunning. Perfect for kitchens, bathrooms, basements, and busy high-traffic areas.</p>
         <div class="svc-tags"><span class="svc-tag">Waterproof</span><span class="svc-tag">Basement</span><span class="svc-tag">Durable</span></div>
+        <div class="svc-link">See LVP work in our gallery →</div>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('carpet')">
         <div class="svc-glow"></div>
         <div class="svc-icon">🛋️</div>
         <div class="svc-name">Carpet</div>
         <p class="svc-desc">Plush bedrooms, carpeted stairs, and full home installs. Stretched tight, seamed clean, and finished right every time.</p>
         <div class="svc-tags"><span class="svc-tag">Bedroom</span><span class="svc-tag">Staircase</span><span class="svc-tag">Full Home</span></div>
+        <div class="svc-link">See carpet work in our gallery →</div>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal" onclick="jumpToGallery('tile')">
         <div class="svc-glow"></div>
         <div class="svc-icon">🍳</div>
         <div class="svc-name">Kitchen Backsplash</div>
         <p class="svc-desc">Transform your kitchen with a backsplash that ties the whole room together. Subway tile, specialty materials, and more.</p>
         <div class="svc-tags"><span class="svc-tag">Subway Tile</span><span class="svc-tag">Specialty</span></div>
+        <div class="svc-link">See tile work in our gallery →</div>
       </div>
     </div>
   </div>
@@ -1025,6 +1049,28 @@ function calcSqft() {
   const withWaste = Math.ceil(area * 1.1);
   out.textContent = area.toLocaleString() + ' sq ft';
   order.textContent = 'Order about ' + withWaste.toLocaleString() + ' sq ft (includes 10% for waste)';
+}
+
+/* ── JUMP FROM SERVICE → GALLERY FILTER ── */
+function jumpToGallery(cat) {
+  // Find and activate the matching filter button
+  const btn = document.querySelector('.gal-filter[data-filter="' + cat + '"]');
+  if (btn) {
+    filterGallery(btn, cat);
+    btn.classList.remove('flash');
+    void btn.offsetWidth; // restart animation
+    btn.classList.add('flash');
+  }
+  // Scroll to gallery
+  const gallery = document.getElementById('gallery');
+  gallery.scrollIntoView({ behavior: 'smooth' });
+  // Pulse the photos after the scroll settles
+  const grid = document.querySelector('.photo-grid');
+  setTimeout(function() {
+    grid.classList.remove('pulse');
+    void grid.offsetWidth;
+    grid.classList.add('pulse');
+  }, 600);
 }
 
 /* ── FLOOR QUIZ ── */
